@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, ChevronDown, ArrowRight } from 'lucide-react';
 import profilePhoto from "./assets/profile.png";
 import './App.css';
+import Work from './components/Work';
+import About from './components/About';
+import Playground from './components/Playground';
+import Contact from './components/Contact';
+import { useLanguage } from './context/LanguageContext';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [lang, setLang] = useState('ENG');
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -23,10 +28,10 @@ function App() {
         <div className="nav-brand">Nika.Design</div>
 
         <div className="nav-links">
-          <a href="#work" className="active">Work</a>
-          <a href="#about">About</a>
-          <a href="#playground">Playground</a>
-          <a href="#contact">Contact</a>
+          <a href="#work" className="active">{t.nav.work}</a>
+          <a href="#about">{t.nav.about}</a>
+          <a href="#playground">{t.nav.vibes}</a>
+          <a href="#contact">{t.nav.contact}</a>
         </div>
 
         <div className="nav-controls">
@@ -65,18 +70,17 @@ function App() {
       <main className="hero-container">
         <div className="glass-hero-card">
           <div className="hero-content">
-            <div className="hero-badge">Available for freelance</div>
+            <div className="hero-badge">{t.hero.badge}</div>
             <h1 className="hero-title">
-              Crafting Digital <br />
-              <span className="gradient-text">Empathy</span>
+              {t.hero.titleStart} <br />
+              <span className="gradient-text">{t.hero.titleEmph}</span>
             </h1>
             <p className="hero-subtitle">
-              Hi, I'm Nika. A UX Designer creating weightless,
-              intuitive interfaces that breathe.
+              {t.hero.subtitle}
             </p>
 
             <button className="glass-button">
-              View Projects
+              {t.hero.cta}
               <ArrowRight size={16} />
             </button>
           </div>
@@ -90,6 +94,11 @@ function App() {
           </div>
         </div>
       </main>
+
+      <Work />
+      <About />
+      <Playground />
+      <Contact />
 
       {/* Decorative ambient blobs if needed beyond body gradient */}
     </div>
