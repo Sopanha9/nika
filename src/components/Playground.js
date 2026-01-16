@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Music, Coffee, Camera, Sparkles, Pause, Play, Heart } from 'lucide-react';
-import vibeDesk from '../assets/vibe-desk.png';
-import vibeAlbum from '../assets/vibe-album.png';
-import vibeSticker from '../assets/vibe-sticker.png';
+import vibeDesk from '../assets/vibe-desk.webp';
+import vibeAlbum from '../assets/vibe-album.webp';
+import vibeSticker from '../assets/vibe-sticker.webp';
 import pistolSong from '../music/Pistol-Cigarettes-After-Sex.m4a';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -86,7 +86,7 @@ const Playground = () => {
                         <span>{t.playground.onRepeat}</span>
                     </div>
                     <div className="music-content">
-                        <img src={vibeAlbum} alt="Album Art" className="album-art" />
+                        <img src={vibeAlbum} alt="Album Art" className="album-art" loading="lazy" />
                         <div className="music-info">
                             <h4 className="song-title">{t.playground.songTitle}</h4>
                             <p className="artist-name">{t.playground.songArtist}</p>
@@ -115,11 +115,11 @@ const Playground = () => {
                 <div className="vibe-card photo-card glass-card">
                     <div className="polaroid-stack">
                         <div className="polaroid p-1">
-                            <img src={vibeDesk} alt="Desk Setup" />
+                            <img src={vibeDesk} alt="Desk Setup" loading="lazy" />
                             <span className="caption">{t.playground.workspace}</span>
                         </div>
                         <div className="sticker-decoration">
-                            <img src={vibeSticker} alt="Sticker" />
+                            <img src={vibeSticker} alt="Sticker" loading="lazy" />
                         </div>
                     </div>
                 </div>

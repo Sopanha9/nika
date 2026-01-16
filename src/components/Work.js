@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import workFintech from '../assets/work-fintech.png';
-import workFashion from '../assets/work-fashion.png';
+import workFintech from '../assets/work-fintech.webp';
+import workFashion from '../assets/work-fashion.webp';
 import { useLanguage } from '../context/LanguageContext';
 
 const projectAssets = [
@@ -33,7 +33,7 @@ const Work = () => {
                     return (
                         <div key={index} className="work-card glass-card">
                             <div className="work-image-container">
-                                <img src={asset.image} alt={project.title} className="work-image" />
+                                <img src={asset.image} alt={project.title} className="work-image" loading="lazy" />
                                 <div className="work-overlay">
                                     <button className="view-project-btn">
                                         {t.work.viewCase}

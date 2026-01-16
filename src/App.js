@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, ChevronDown, ArrowRight } from 'lucide-react';
-import profilePhoto from "./assets/profile.png";
+import profilePhoto from "./assets/profile.webp";
 import './App.css';
 import Work from './components/Work';
 import About from './components/About';
